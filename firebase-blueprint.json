@@ -1,0 +1,30 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User profiles connected via Google Sign-In",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique Google user ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        }
+      },
+      "required": ["id", "name", "email"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "Individual user preferences and profile records"
+    }
+  }
+}
